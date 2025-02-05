@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
-ruby '3.3.2'
+ruby '3.3.6'
 
-gem 'rails', '7.1.3.4'
+gem 'rails', '7.2.1.1'
 
 gem 'jquery-rails'
-gem 'pg', '~> 1.5.6'
+gem 'pg', '~> 1.5.9'
 gem 'omniauth', '1.9.2'
 gem 'omniauth-github'
 gem 'octokit'
 gem 'rabl'
-gem 'kaminari'
+gem 'kaminari', github: 'keithyoder/kaminari', branch: 'deprecator-notify'
 gem 'bootstrap-sass'
 gem 'jquery-datetimepicker-rails'
 gem 'simple_form'
@@ -25,7 +25,7 @@ gem 'puma'
 gem 'rack-attack'
 gem 'bootsnap', require: false
 gem 'sprockets', '< 5.0.0'
-gem 'faraday', '2.9.1'
+gem 'faraday', '2.12.2'
 gem "commonmarker", "~> 0.23.9"
 gem 'faraday-retry'
 gem 'observer'
