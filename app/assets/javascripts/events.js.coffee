@@ -72,13 +72,17 @@ $ ->
     for quarter in ["00", "15", "30", "45"]
       allowTimes.push "#{hour}:#{quarter}"
 
+  configureDateTimePicker = (selector, maxDate) ->
+    $(selector).datetimepicker(
+      minDate: currentYear + '/12/01'
+      maxDate: maxDate
+      startDate: currentYear + '/12/01'
+      allowTimes: allowTimes
+    )
+
   # @TODO:
-  $('.js-datetimepicker').datetimepicker(
-    minDate: currentYear + '/12/01'
-    maxDate: currentYear + '/12/25'
-    startDate: currentYear + '/12/01'
-    allowTimes: allowTimes
-  )
+  configureDateTimePicker('.js-datetimepicker', currentYear + '/12/25')
+  configureDateTimePicker('.js-contribution-datetimepicker', currentYear + '/12/24')
 
   $('.map').each ->
 
