@@ -30,6 +30,14 @@ describe CountHelper, type: :helper do
 
         expect(helper.user_count_for_language).to eql(2)
       end
+
+      it 'deduplicates users when language skills are duplicated' do
+        user = create :user
+        create :skill, user: user, language: @language
+        create :skill, user: user, language: @language
+
+        expect(helper.user_count_for_language).to eql(1)
+      end
     end
   end
 
